@@ -1,0 +1,16 @@
+objects = Test.o Sort.o
+
+all:Test
+
+Test:$(objects)
+	gcc -o Test $(objects)
+	
+Test.o:Test.c
+	gcc -c -g Test.c
+
+Sort.o:Sort.c Sort.h
+	gcc -c -g Sort.c
+
+.PHONY:clean
+clean:
+	-rm -rf #(objects)
